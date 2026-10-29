@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102d2b">
+  <meta name="description" content="แอปบันทึกรายรับรายจ่ายส่วนตัว เก็บข้อมูลในเครื่อง พร้อมสำรองข้อมูลได้">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="เงินของฉัน">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>เนย · เงินของฉัน</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="เงินของฉัน หน้าหลัก"><span class="brand-mark">น</span><span><b>เงินของฉัน</b><small>จัดการเงินอย่างมั่นใจ</small></span></a>
+    <div class="top-actions"><span class="local-pill"><i></i> ข้อมูลอยู่ในเครื่องนี้</span><button class="install-button" id="installBtn">ติดตั้งแอป</button><button class="icon-button" id="backupBtn" title="สำรองข้อมูล" aria-label="สำรองข้อมูล">↥</button></div>
+  </header>
+  <main id="top">
+    <section class="welcome"><div><p class="eyebrow" id="today"></p><h1>สวัสดี, เนย <span>✦</span></h1><p class="subhead">มาดูภาพรวมการเงินของคุณกัน</p></div><button class="primary-button" id="openTransaction"><span>＋</span> เพิ่มรายการ</button></section>
+    <section class="balance-card" aria-label="เงินคงเหลือ"><div class="balance-top"><div><p class="card-label">เงินคงเหลือจริง</p><p class="balance-amount" id="balance">฿0.00</p></div><div class="balance-icon">฿</div></div><div class="balance-bottom"><span id="balanceNote">คำนวณจากรายการที่บันทึก</span><button class="balance-link" id="balanceInfo">วิธีคำนวณ <span>↗</span></button></div><div class="card-decoration"></div></section>
+    <section class="stat-grid" aria-label="ภาพรวม"><article class="stat-card"><div class="stat-head"><span class="stat-icon income-icon">↙</span><span class="stat-label">รายรับ</span><span class="period-label">เดือนนี้</span></div><strong id="income">฿0.00</strong><small>จากรายการที่บันทึก</small></article><article class="stat-card"><div class="stat-head"><span class="stat-icon expense-icon">↗</span><span class="stat-label">รายจ่าย</span><span class="period-label">เดือนนี้</span></div><strong id="expense">฿0.00</strong><small>จากรายการที่บันทึก</small></article><article class="stat-card status-card"><div class="stat-head"><span class="stat-icon status-icon">◎</span><span class="stat-label">สถานะเงิน</span></div><strong class="status-value" id="status">ยังไม่มีข้อมูล</strong><small id="statusNote">เพิ่มรายการเพื่อเริ่มติดตาม</small></article></section>
+    <section class="overview-grid"><article class="panel bills-panel"><div class="panel-heading"><div><p class="eyebrow">อย่าพลาดกำหนด</p><h2>บิลใกล้ครบกำหนด</h2></div><button class="text-button" id="addBillBtn">＋ เพิ่มบิล</button></div><div id="billsList" class="empty-state"><span class="empty-icon">▤</span><b>ยังไม่มีบิลที่ต้องติดตาม</b><span>เพิ่มบิลเพื่อให้เห็นกำหนดชำระที่นี่</span></div></article>
+      <article class="panel budget-panel"><div class="panel-heading"><div><p class="eyebrow">ควบคุมการใช้จ่าย</p><h2>งบรายสัปดาห์</h2></div><button class="text-button" id="setBudgetBtn">ตั้งงบ ＋</button></div><div class="week-caption" id="weekRange"></div><div id="budgetsList" class="empty-state compact"><span class="empty-icon">◷</span><b>ยังไม่ได้ตั้งงบรายสัปดาห์</b><span>กำหนดวงเงินเพื่อดูยอดใช้จ่ายในสัปดาห์นี้</span></div></article></section>
+    <section class="overview-grid lower-grid"><article class="panel goals-panel"><div class="panel-heading"><div><p class="eyebrow">ค่อย ๆ ไปถึงเป้าหมาย</p><h2>เงินออม</h2></div><button class="text-button" id="addGoalBtn">＋ เพิ่มเป้าหมาย</button></div><div id="goalsList" class="empty-state compact"><span class="empty-icon">◇</span><b>เริ่มตั้งเป้าหมายเงินออม</b><span>ยอดเงินออมจะนับจากรายการโอนเข้าเงินออม</span></div></article><article class="panel debt-panel"><div class="panel-heading"><div><p class="eyebrow">รู้ยอดที่ต้องจัดการ</p><h2>หนี้คงเหลือ</h2></div><button class="text-button" id="addDebtBtn">＋ เพิ่มหนี้</button></div><div class="debt-total" id="debtTotal">฿0.00</div><div id="debtsList" class="empty-state compact"><span class="empty-icon">⌁</span><b>ยังไม่มีหนี้ที่บันทึก</b><span>เพิ่มยอดหนี้คงค้างเพื่อเริ่มติดตาม</span></div></article></section>
+    <section class="panel activity-panel history-panel"><div class="panel-heading"><div><p class="eyebrow">ภาพรวมและรายการย้อนหลัง</p><h2>ประวัติรายเดือน</h2></div><div class="history-actions"><label class="month-select-label"><span>เดือน</span><select id="historyMonth" aria-label="เลือกเดือน"></select></label><button class="text-button" id="allTransactions">ดูทั้งหมด</button><button class="text-button export-month" id="exportMonth">ส่งออก CSV ↥</button></div></div><div class="month-summary"><div><span>รายรับ</span><strong id="monthIncome">฿0.00</strong></div><div><span>รายจ่าย</span><strong id="monthExpense">฿0.00</strong></div><div><span>สุทธิของเดือน</span><strong id="monthNet">฿0.00</strong></div></div><div class="table-wrap"><table><thead><tr><th>รายการ</th><th>หมวดหมู่</th><th>วันที่</th><th class="align-right">จำนวนเงิน</th></tr></thead><tbody id="transactionRows"></tbody></table><div id="transactionEmpty" class="empty-state activity-empty"><span class="empty-icon">▤</span><b>เดือนไม่มีรายการ</b><span>เพิ่มรายการเพื่อเริ่มบันทึกข้อมูลเดือนนี้</span><button class="text-button" id="firstEntry">เพิ่มรายการ ＋</button></div></div></section>
+    <footer><span>🔒 ข้อมูลการเงินของคุณเก็บไว้ในเบราว์เซอร์นี้</span><a class="footer-link" href="คู่มือการใช้งาน.html">อ่านคู่มือ</a><span class="footer-dot">·</span><button class="footer-link" id="restoreBtn">กู้คืนข้อมูลสำรอง</button><span class="footer-dot">·</span><button class="footer-link" id="clearDataBtn">ลบข้อมูลในเครื่อง</button></footer>
+  </main>
+  <nav class="mobile-nav"><a class="nav-active" href="#top"><span>⌂</span>หน้าหลัก</a><button id="navTransactions"><span>↕</span>รายการ</button><button id="navAdd"><span class="nav-add">＋</span>เพิ่มรายการ</button><button id="navBudget"><span>◷</span>งบประมาณ</button><button id="navSettings"><span>⚙</span>ตั้งค่า</button></nav>
+  <dialog id="dialog"><form id="dialogForm" method="dialog"><div class="dialog-head"><div><p class="eyebrow" id="dialogEyebrow">บันทึกข้อมูล</p><h2 id="dialogTitle"></h2></div><button type="button" class="close-button" id="closeDialog" aria-label="ปิด">×</button></div><div id="dialogContent" class="dialog-content"></div><div class="dialog-actions"><button type="button" class="secondary-button" id="cancelDialog">ยกเลิก</button><button type="submit" class="primary-button" id="saveDialog">บันทึก</button></div></form></dialog>
+  <input id="importFile" type="file" accept="application/json,.json" hidden>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body></html>
