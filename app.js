@@ -21,7 +21,7 @@
   function toast(s){const el=$('#toast');el.textContent=s;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2600)}
   const dateLabel = s => {if(!s)return '—';const d=new Date(`${s}T00:00:00`);return new Intl.DateTimeFormat('th-TH',{day:'numeric',month:'short',year:'2-digit'}).format(d)};
   function render(){
-    const now=new Date(), month=monthStart();$('#today').textContent=new Intl.DateTimeFormat('th-TH',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+    const now=new Date(), month=monthStart();document.getElementById("nicknameButton").textContent=data.nickname||"เนย";$('#today').textContent=new Intl.DateTimeFormat('th-TH',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
     const bal=cashBalance();$('#balance').textContent=money(bal);$('#balance').style.color=bal<0?'#ffc4bc':'';$('#balanceNote').textContent=data.transactions.length?`${data.transactions.length} รายการที่บันทึก`:'คำนวณจากรายการที่บันทึก';
     const current=data.transactions.filter(t=>t.date>=month);const inc=current.filter(t=>t.type==='income').reduce((s,t)=>s+t.amount,0);const exp=current.filter(t=>t.type==='expense'||t.type==='debt_payment').reduce((s,t)=>s+t.amount,0);$('#income').textContent=money(inc);$('#expense').textContent=money(exp);
     $('#status').textContent=!data.transactions.length?'ยังไม่มีข้อมูล':bal<0?'เงินติดลบ':bal===0?'ยอดเงินเป็นศูนย์':'ยอดเงินเป็นบวก';$('#status').style.color=bal<0?'#bd554e':'';$('#statusNote').textContent=!data.transactions.length?'เพิ่มรายการเพื่อเริ่มติดตาม':bal<0?'รายจ่ายและภาระจ่ายสูงกว่าเงินรับ':bal===0?'เงินรับและจ่ายพอดีกัน':'เงินคงเหลือไม่ติดลบ';
