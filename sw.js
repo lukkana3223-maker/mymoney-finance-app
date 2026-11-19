@@ -1,5 +1,5 @@
-const CACHE = 'noey-finance-shell-v11';
-const FILES = ['./', './index.html', './styles.css?v=cute-v11', './app.js?v=cute-v11', './manifest.webmanifest', './icon.svg', './apple-touch-icon.png', './icon-192.png', './icon-512.png', './คู่มือการใช้งาน.html'];
+const CACHE = 'noey-finance-shell-v12';
+const FILES = ['./', './index.html', './styles.css?v=pastel-v12', './app.js?v=pastel-v12', './manifest.webmanifest', './icon.svg?v=pastel-v12', './apple-touch-icon.png', './icon-192.png', './icon-512.png', './คู่มือการใช้งาน.html'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting())));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', event => {
