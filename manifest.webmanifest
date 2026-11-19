@@ -1,6 +1,6 @@
 {
-  "name": "เงินของฉัน · เนย",
-  "short_name": "เงินของฉัน",
+  "name": "My Money",
+  "short_name": "My Money",
   "description": "บันทึกรายรับรายจ่ายส่วนตัว เก็บข้อมูลไว้ในเครื่อง",
   "lang": "th",
   "start_url": "./",
