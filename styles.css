@@ -78,3 +78,17 @@ body{background:linear-gradient(145deg,#fff9fb 0%,#fffaf4 52%,#f7f8ff 100%);colo
 .mobile-nav{background:#fffafcf2;border-top-color:#f0e4eb}.mobile-nav .nav-active{color:#789b86}.mobile-nav .nav-add{background:#91b29e;color:#fff;box-shadow:0 3px 8px #71937e38}
 .dialog-head{background:#fff7fa}.dialog-actions{background:#fffafd}.secondary-button{background:#f5eff4;color:#79677a;border-color:#eadfe9}
 @media(max-width:650px){.topbar{background:#fffafcf5}.welcome h1{font-size:22px}}
+/* High-contrast mint, blush and cream palette (no violet) */
+:root{--ink:#263b32;--muted:#58685f;--line:#dce9df;--paper:#f6fbf7;--white:#fff;--green:#34745b;--mint:#e3f2e7;--red:#a64d4d;--gold:#9c702b}
+body{background:linear-gradient(145deg,#f7fbf8 0%,#fffaf5 58%,#fff6f7 100%);color:#263b32}
+h1,h2,h3,strong,.stat-card>strong,.status-value,.panel h2,.nudge-copy h2,.month-summary strong{color:#263b32}
+.topbar{background:#ffffffed;border-bottom-color:#dce9df}.brand-mark{background:#e4f2e8;color:#315b46}.brand b{color:#263b32}.brand small,.subhead,.eyebrow{color:#58685f}
+.local-pill{background:#eaf4eb;border-color:#d6e7d8;color:#315b46}.local-pill i{background:#4e9868}.install-button{background:#edf5ed;border-color:#d8e8db;color:#315b46}.install-button:hover{background:#e2f0e5}
+.balance-card{background:linear-gradient(118deg,#dcefe1 0%,#e9f4e8 58%,#f7f4e8 100%);border:1px solid #cfe2d3;box-shadow:0 10px 24px #466c501c}.balance-card .card-label,.balance-card .balance-amount{color:#234638!important}.balance-card .balance-bottom,.balance-card .balance-link{color:#365f49}.balance-icon{background:#cfe6d4;color:#315b46}
+.stat-card,.panel{background:#fff;border-color:#e1eae3;box-shadow:0 5px 16px #315c4210}.stat-head,.stat-label,.period-label,.stat-card small{color:#44564a}.stat-icon{background:#e8f1e9;color:#315b46}.income-icon{background:#e2f2e5;color:#27633c}.expense-icon{background:#fff0e9;color:#984d3a}.status-icon{background:#f4efe4;color:#745c2f}.period-label{background:#edf5ee;color:#385d45}
+.primary-button{background:#38785c;color:#fff;box-shadow:0 4px 10px #315f4726}.primary-button:hover{background:#2e684f}.text-button,.balance-link{color:#315f47}.text-button:hover{color:#204b36}
+.nudge-card{border-color:#efd8dc;background:linear-gradient(110deg,#fff0f2 0%,#fff9f0 55%,#edf6ee 100%)}.nudge-copy h2{color:#3e3434}.nudge-kicker{color:#854c55}.nudge-copy>p:last-child{color:#55494a}.nudge-button{background:#b95f70;color:#fff}.nudge-button:hover{background:#a94e60}
+.progress{background:#e8eee8}.progress i{background:linear-gradient(90deg,#77ad82,#b3d7b7)}.goal-row .progress i{background:linear-gradient(90deg,#d98b94,#efb3ad)}.budget-row .progress i{background:linear-gradient(90deg,#6ca57a,#acd5b3)}
+.month-summary>div{background:#eff5ef}.month-summary span,.month-select-label{color:#46584b}.month-summary strong{color:#263b32}.month-select-label select{border-color:#d9e5db;background:#fff;color:#263b32}.export-month{border-color:#d9e5db}.category-chip{background:#edf4ed;color:#385945}
+.mobile-nav{background:#ffffffed;border-top-color:#dce9df}.mobile-nav a,.mobile-nav button{color:#536359}.mobile-nav .nav-active{color:#285c40}.mobile-nav .nav-add{background:#38785c;color:#fff;box-shadow:0 3px 8px #315f4730}
+.dialog-head{background:#f5f9f5}.dialog-actions{background:#fff}.secondary-button{background:#edf4ee;color:#354b3d;border-color:#dbe8dd}.field-help,.note-box{color:#415247}
