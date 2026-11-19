@@ -57,3 +57,11 @@ button,a,select,input{touch-action:manipulation}
  .mobile-nav{height:calc(63px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -5px 18px #193c2a0c}
  .dialog-actions button{min-height:42px}
 }
+/* Cute, encouraging check-in card */
+.nudge-card{position:relative;display:grid;grid-template-columns:76px 1fr auto;align-items:center;gap:18px;overflow:hidden;margin:-7px 0 21px;padding:16px 20px;border:1px solid #f1d9df;border-radius:18px;background:linear-gradient(112deg,#fff0f3 0%,#fff8f1 55%,#fffdf9 100%);box-shadow:0 7px 20px #bd7c8b12}
+.nudge-mascot{width:68px;height:68px;position:relative;display:grid;place-items:center;border-radius:22px;background:#fff;box-shadow:0 5px 14px #bd7c8b20;transform:rotate(-4deg)}
+.nudge-mascot img{width:56px;height:56px;object-fit:contain}
+.nudge-sparkle,.nudge-heart{position:absolute;color:#e6a93e;font-size:18px}.nudge-sparkle{right:-5px;top:-8px}.nudge-heart{left:-7px;bottom:-7px;color:#e68b9d;font-size:21px}
+.nudge-copy{position:relative;z-index:1}.nudge-kicker{margin:0 0 3px;color:#b46f7c;font-size:10px;font-weight:700;letter-spacing:.04em}.nudge-copy h2{margin:0;color:#49363b;font-size:16px;font-weight:700}.nudge-copy>p:last-child{margin:4px 0 0;color:#826b70;font-size:11px}
+.nudge-button{position:relative;z-index:1;display:flex;align-items:center;gap:8px;border:0;border-radius:12px;padding:10px 14px;background:#db8194;color:#fff;font:600 11px var(--font);cursor:pointer;box-shadow:0 4px 9px #d680932d}.nudge-button:hover{background:#cb6e83}.nudge-button span:last-child{font-size:16px;line-height:12px}
+@media(max-width:650px){.nudge-card{grid-template-columns:52px 1fr;gap:11px;margin:-2px 0 15px;padding:12px;border-radius:15px}.nudge-mascot{width:50px;height:50px;border-radius:16px}.nudge-mascot img{width:43px;height:43px}.nudge-sparkle{font-size:14px;top:-7px;right:-4px}.nudge-heart{font-size:16px;left:-6px;bottom:-6px}.nudge-copy h2{font-size:13px}.nudge-kicker{font-size:8px}.nudge-copy>p:last-child{font-size:9px}.nudge-button{grid-column:2;justify-self:start;padding:8px 12px;font-size:10px}}
